@@ -1,0 +1,104 @@
+<div class="container register">
+  <main class="form-signin">
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+      <img
+        class="mb-4"
+        src="../assets/bootstrap-logo.svg"
+        alt=""
+        width="72"
+        height="57"
+      />
+      <h1 class="h3 mb-3 fw-normal">Please register</h1>
+
+      <div class="form-floating">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Name"
+          formControlName="name"
+          id="name"
+        />
+        <label for="floatingPassword">Name</label>
+        <div class="text-danger" *ngIf="name?.touched && !name?.valid">
+          <div *ngIf="name?.errors?.['minLength']?.actualLength < 3 && !name?.errors?.['required'] ">
+            name must be greater or equal to 3 characters
+          </div>
+          <div *ngIf="name?.errors?.['required']">
+            name required
+          </div>
+        </div>
+      </div>
+      <div class="form-floating">
+        <input
+          type="email"
+          class="form-control"
+          placeholder="name@example.com"
+          formControlName="email"
+        />
+        <label for="floatingInput">Email address</label>
+        <div class="text-danger" *ngIf="(email?.touched ) && !email?.valid">
+          <div>
+            email non valid
+          </div>
+        </div>
+      </div>
+      <div class="form-floating">
+        <input
+          type="text"
+          class="form-control"
+          id="userName"
+          placeholder="Surname"
+          formControlName="userName"
+        />
+        <label for="floatingPassword">UserName</label>
+        <div class="text-danger" *ngIf="userName?.touched && !userName?.valid">
+          <div *ngIf="userName?.errors?.['minLength']?.actualLength < 6 && !userName?.errors?.['required'] ">
+            userName must be greater or equal to 6 characters
+          </div>
+          <div *ngIf="userName?.errors?.['required']">
+            userName required
+          </div>
+        </div>
+      </div>
+      <div class="form-floating" formGroupName="passwords">
+        <input
+          type="password"
+          class="form-control"
+          id="floatingPassword"
+          placeholder="Password"
+          formControlName="password"
+        />
+        <label for="floatingPassword">Password</label>
+        <div class="text-danger" *ngIf="password?.touched && !password?.valid">
+          <div *ngIf="password?.errors && !password?.errors?.['required'] ">
+            password must be greater or equal to 6 characters
+          </div>
+          <div *ngIf="password?.errors?.['required']">
+            Password required
+          </div>
+        </div>
+      </div>
+      <div class="form-floating" formGroupName="passwords">
+        <input
+          type="password"
+          class="form-control"
+          id="floatingPassword"
+          placeholder="Password"
+          formControlName="rePassword"
+        />
+        <label for="floatingPassword">Confirm Password</label>
+        <div class="text-danger" *ngIf="password?.touched && !password?.valid">
+          <div *ngIf="rePassword?.errors?.['passwordMismatch']">
+            confirm password must be  equal password
+          </div>
+        </div>
+      </div>
+      <button class="w-100 btn btn-lg btn-primary" type="submit" [disabled]="!signupForm.valid">
+        Sign up
+      </button>
+      <div class="checkbox mb-3 signin">
+        <a [routerLink]="['']">Sign In</a>
+      </div>
+    </form>
+  </main>
+</div>
