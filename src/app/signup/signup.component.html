@@ -34,6 +34,7 @@
           class="form-control"
           placeholder="name@example.com"
           formControlName="email"
+          id="email"
         />
         <label for="floatingInput">Email address</label>
         <div class="text-danger" *ngIf="(email?.touched ) && !email?.valid">
@@ -49,6 +50,7 @@
           id="userName"
           placeholder="Surname"
           formControlName="userName"
+          id="userName"
         />
         <label for="floatingPassword">UserName</label>
         <div class="text-danger" *ngIf="userName?.touched && !userName?.valid">
@@ -67,6 +69,7 @@
           id="floatingPassword"
           placeholder="Password"
           formControlName="password"
+          id="password"
         />
         <label for="floatingPassword">Password</label>
         <div class="text-danger" *ngIf="password?.touched && !password?.valid">
@@ -85,6 +88,7 @@
           id="floatingPassword"
           placeholder="Password"
           formControlName="rePassword"
+          id="rePassword"
         />
         <label for="floatingPassword">Confirm Password</label>
         <div class="text-danger" *ngIf="password?.touched && !password?.valid">

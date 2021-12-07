@@ -1,6 +1,8 @@
 import { Component, OnInit,OnChanges, SimpleChanges } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
+import { UsersService } from '../users.service';
+
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -21,7 +23,7 @@ export class SignupComponent implements OnInit,OnChanges {
   });
 
   error: string = '';
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private usersService: UsersService) {}
 
   ngOnInit(): void {
     console.log(this.signupForm);
@@ -56,6 +58,14 @@ export class SignupComponent implements OnInit,OnChanges {
 
   onSubmit() {
     console.log(this.signupForm.value);
-    this.error = 'login failed';
+    const user = {
+      name: this.signupForm.value.name,
+      email: this.signupForm.value.email,
+      userName: this.signupForm.value.userName,
+      password: this.signupForm.value.passwords.password,
+
+    }
+   const res =  this.usersService.register(user)
+   console.log(res, 'res');
   }
 }
