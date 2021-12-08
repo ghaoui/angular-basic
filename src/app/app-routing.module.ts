@@ -4,11 +4,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { PrivateComponent } from './pages/private/private.component';
-import {ProductsComponent} from './pages/products/products.component';
+import { ProductsComponent } from './pages/products/products.component';
 import { UsersComponent } from './pages/users/users.component';
 
-import {PathGuard} from './guards/path.guard';
-
+import { PathGuard } from './guards/path.guard';
 
 type Route = {
   path: string;
@@ -24,13 +23,16 @@ const routes: Route[] = [
   {
     path: '',
     component: PrivateComponent,
-    children: [{ path: 'products', component: ProductsComponent },{ path: 'users', component: UsersComponent }],
+    children: [
+      { path: 'products', component: ProductsComponent },
+      { path: 'users', component: UsersComponent },
+    ],
     canActivate: [PathGuard],
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
