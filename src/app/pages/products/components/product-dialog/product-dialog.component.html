@@ -1,0 +1,39 @@
+<form [formGroup]="data.productForm" (ngSubmit)="onSubmit()">
+  <fieldset>
+    <legend>New Product</legend>
+    <div class="mb-3">
+      <label for="name" class="form-label">Product name</label>
+      <input
+        type="text"
+        id="name"
+        class="form-control"
+        formControlName="name"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="quantity" class="form-label">Quantity</label>
+      <input
+        type="number"
+        id="quantity"
+        class="form-control"
+        formControlName="quantity"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="price" class="form-label">Price</label>
+      <input
+        type="number"
+        id="price"
+        class="form-control"
+        formControlName="price"
+      />
+    </div>
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="!data.productForm.valid || !data.productForm.dirty"
+    >
+      Submit
+    </button>
+  </fieldset>
+</form>
