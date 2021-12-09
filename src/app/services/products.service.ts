@@ -10,32 +10,34 @@ export class ProductsService {
   constructor(private http: HttpClient) {}
 
   getProducts() {
-    return this.http.get<Product[]>('/api/products');
+    return this.http.get<Product[]>(
+      'https://nestjs-basic.herokuapp.com/products'
+    );
   }
 
   getProduct(id: number) {
-     this.http
-      .get<Product>('/api/products/' + id)
-      .subscribe((product) => {
-        console.log(product);
-      });
+    return this.http.get<Product>(
+      'https://nestjs-basic.herokuapp.com/products/' + id
+    );
   }
 
   createProduct(product: Product) {
-     this.http.post('/api/products', product).subscribe((product) => {
-        console.log(product);
-      })
+    return this.http.post<Product>(
+      'https://nestjs-basic.herokuapp.com/products',
+      product
+    );
   }
 
   updateProduct(product: Product, id: string) {
-     this.http.patch('/api/products/' + id, product).subscribe((product) => {
-        console.log(product);
-      })
+    return this.http.patch(
+      'https://nestjs-basic.herokuapp.com/products/' + id,
+      product
+    );
   }
 
   deleteProduct(id: string) {
-     this.http.delete('/api/products/' + id).subscribe((product) => {
-        console.log(product);
-      })
+    return this.http.delete<string>(
+      'https://nestjs-basic.herokuapp.com/products/' + id
+    );
   }
 }

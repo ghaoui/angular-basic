@@ -19,6 +19,8 @@ import { UsersComponent } from './pages/users/users.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { ProductDialogComponent } from './pages/products/components/product-dialog/product-dialog.component';
 
+import { ProductsService } from './services/products.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +45,7 @@ import { ProductDialogComponent } from './pages/products/components/product-dial
     MatTableModule,
     MatDialogModule
   ],
-  providers: [],
+  providers: [ProductsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
