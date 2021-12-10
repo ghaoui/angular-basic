@@ -20,6 +20,12 @@ import { ProductsComponent } from './pages/products/products.component';
 import { ProductDialogComponent } from './pages/products/components/product-dialog/product-dialog.component';
 
 import { ProductsService } from './services/products.service';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './reducers';
+import { usersReducer } from './reducers/user.reducer';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
+// import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [
@@ -43,7 +49,9 @@ import { ProductsService } from './services/products.service';
     MatToolbarModule,
     MatIconModule,
     MatTableModule,
-    MatDialogModule
+    MatDialogModule,
+    StoreModule.forRoot({users: usersReducer}),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
   ],
   providers: [ProductsService],
   bootstrap: [AppComponent],
