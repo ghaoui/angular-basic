@@ -1,7 +1,8 @@
-<mat-toolbar>
-  <span>Users</span>
-  <button mat-button (click)="createUser()">add User</button>
-</mat-toolbar>
+<app-top-bar
+  title="Users"
+  buttonTitle="Add User"
+  (actionEvent)="openDialog()"
+></app-top-bar>
 
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" #table>
   <ng-container matColumnDef="_id">

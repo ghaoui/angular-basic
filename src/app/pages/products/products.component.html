@@ -1,7 +1,8 @@
-<mat-toolbar>
-  <span>Products</span>
-  <button mat-button (click)="openDialog()">add Product</button>
-</mat-toolbar>
+<app-top-bar
+  title="Products"
+  buttonTitle="Add Product"
+  (actionEvent)="openDialog()"
+></app-top-bar>
 
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" #table>
   <ng-container matColumnDef="_id">

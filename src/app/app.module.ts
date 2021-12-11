@@ -25,6 +25,7 @@ import { reducers, metaReducers } from './reducers';
 import { usersReducer } from './reducers/user.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { TopBarComponent } from './shared-components/top-bar/top-bar.component';
 // import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
@@ -36,6 +37,7 @@ import { environment } from '../environments/environment';
     UsersComponent,
     ProductsComponent,
     ProductDialogComponent,
+    TopBarComponent,
     //MatToolbarModule,
     // MatIconModule
   ],
