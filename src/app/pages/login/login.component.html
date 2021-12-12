@@ -1,4 +1,4 @@
-<div class="container  login">
+<div class="container login">
   <main class="form-signin">
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <img
@@ -12,14 +12,13 @@
 
       <div class="form-floating">
         <input
-          type="email"
+          type="text"
           class="form-control"
-          id="email"
-          placeholder="name@example.com"
-          formControlName="email"
-          
+          id="userName"
+          placeholder="username"
+          formControlName="userName"
         />
-        <label for="floatingInput">Email address</label>
+        <label for="floatingInput">Username</label>
       </div>
       <div class="form-floating">
         <input
@@ -28,21 +27,29 @@
           id="password"
           placeholder="Password"
           formControlName="password"
-          
         />
         <label for="floatingPassword">Password</label>
       </div>
 
       <div class="checkbox mb-3">
         <label>
-          <input type="checkbox" value="remember-me" formControlName="remember"/> Remember me
+          <input
+            type="checkbox"
+            value="remember-me"
+            formControlName="remember"
+          />
+          Remember me
         </label>
       </div>
       <div class="text-danger error" *ngIf="error">
         {{ error }}
       </div>
-      
-      <button class="w-100 btn btn-lg btn-primary" type="submit" [disabled]="!loginForm.valid">
+
+      <button
+        class="w-100 btn btn-lg btn-primary"
+        type="submit"
+        [disabled]="!loginForm.valid"
+      >
         Sign in
       </button>
       <div class="checkbox mb-3 signup">

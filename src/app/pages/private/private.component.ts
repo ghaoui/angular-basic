@@ -11,7 +11,7 @@ export class PrivateComponent implements OnInit {
 
   ngOnInit(): void {}
   logout(): void {
-    localStorage.removeItem('token');
+    localStorage.removeItem('access_token');
     this.router.navigate(['/login']);
   }
 }

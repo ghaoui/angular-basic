@@ -25,11 +25,10 @@ export class UsersService {
       });
   }
 
-  login(email: string, password: string) {
-    this.http
-      .post('https://nestjs-basic.herokuapp.com/login', { email, password })
-      .subscribe((data) => {
-        console.log(data);
-      });
+  login({ userName, password }: User) {
+    return this.http.post('https://nestjs-basic.herokuapp.com/login', {
+      username: userName,
+      password,
+    });
   }
 }
