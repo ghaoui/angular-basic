@@ -13,14 +13,17 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <ul
+          class="navbar-nav me-auto mb-2 mb-lg-0"
+          *ngIf="user.role == 'admin'"
+        >
           <li class="nav-item">
             <a
               class="nav-link"
               aria-current="page"
               routerLinkActive="active"
               [routerLink]="['/']"
-              [routerLinkActiveOptions]="{exact: true}"
+              [routerLinkActiveOptions]="{ exact: true }"
               >Home</a
             >
           </li>
@@ -43,7 +46,29 @@
             >
           </li>
         </ul>
-        <button class="logout" (click)="logout()">Logout</button>
+
+        <div class="avatar-container">
+          <div class="avatar" >
+            <img [src]="user.src" (click)="onDisplayProfile()" #avatarButton />
+          </div>
+          <div class="card" style="width: 18rem" *ngIf="displayProfile" #card>
+            <img [src]="user.src" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">{{ user.name }}</h5>
+              <p class="card-text">
+                {{ user.description }}
+              </p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">{{ user.role }}</li>
+              <li class="list-group-item">A second item</li>
+              <li class="list-group-item">A third item</li>
+            </ul>
+            <div class="card-body">
+              <div class="card-link" (click)="logout()">Logout</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </nav>
