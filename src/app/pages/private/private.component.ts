@@ -28,8 +28,6 @@ export class PrivateComponent implements OnInit {
     private renderer: Renderer2
   ) {
     this.renderer.listen('window', 'click', (event) => {
-      console.log(event);
-      console.log(this.avatarButton);
       if (
         event.target !== this.avatarButton?.nativeElement &&
         event.target !== this.card?.nativeElement
@@ -48,7 +46,11 @@ export class PrivateComponent implements OnInit {
     localStorage.removeItem('access_token');
     this.router.navigate(['/login']);
   }
-  onDisplayProfile(): void {
+  onDisplayProfile(e: Event): void {
+    e.stopPropagation();
     this.displayProfile = !this.displayProfile;
+  }
+  onclickCard(e: Event): void {
+    e.stopPropagation();
   }
 }

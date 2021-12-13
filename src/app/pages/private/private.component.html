@@ -48,10 +48,16 @@
         </ul>
 
         <div class="avatar-container">
-          <div class="avatar" >
-            <img [src]="user.src" (click)="onDisplayProfile()" #avatarButton />
+          <div class="avatar" (click)="onDisplayProfile($event)" #avatarButton>
+            <img [src]="user.src" />
           </div>
-          <div class="card" style="width: 18rem" *ngIf="displayProfile" #card>
+          <div
+            class="card"
+            style="width: 18rem"
+            *ngIf="displayProfile"
+            #card
+            (click)="onclickCard($event)"
+          >
             <img [src]="user.src" class="card-img-top" alt="..." />
             <div class="card-body">
               <h5 class="card-title">{{ user.name }}</h5>
