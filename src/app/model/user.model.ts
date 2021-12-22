@@ -3,4 +3,7 @@ export interface User {
   userName: string;
   password: string;
   name: string;
+  avatar?: string;
+  role?: string;
+  description?: string;
 }

@@ -8,6 +8,7 @@ import { ProductsComponent } from './pages/products/products.component';
 import { UsersComponent } from './pages/users/users.component';
 
 import { PathGuard } from './guards/path.guard';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 type Route = {
   path: string;
@@ -26,6 +27,7 @@ const routes: Route[] = [
     children: [
       { path: 'products', component: ProductsComponent },
       { path: 'users', component: UsersComponent },
+      { path: 'profile', component: ProfileComponent  },
     ],
     canActivate: [PathGuard],
   },

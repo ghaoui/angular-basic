@@ -27,6 +27,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { TopBarComponent } from './shared-components/top-bar/top-bar.component';
 import { TokenInterceptorService } from './services/token-interceptor.service';
+import { ProfileComponent } from './pages/profile/profile.component';
 // import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
@@ -39,6 +40,7 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
     ProductsComponent,
     ProductDialogComponent,
     TopBarComponent,
+    ProfileComponent,
     //MatToolbarModule,
     // MatIconModule
   ],

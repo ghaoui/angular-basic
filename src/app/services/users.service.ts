@@ -31,4 +31,8 @@ export class UsersService {
       password,
     });
   }
+
+  me() {
+    return this.http.get<User>('https://nestjs-basic.herokuapp.com/me');
+  }
 }
