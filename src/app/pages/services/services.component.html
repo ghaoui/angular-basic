@@ -1,1 +1,31 @@
-<p>services works!</p>
+<div class="new-client">
+  <form [formGroup]="servicesForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        formControlName="name"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="price" class="form-label">Price</label>
+      <input
+        type="text"
+        class="form-control"
+        id="price"
+        formControlName="price"
+      />
+    </div>
+
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="!servicesForm.valid"
+    >
+      Submit
+    </button>
+  </form>
+</div>

@@ -53,4 +53,11 @@ export class UsersService {
   getCompanies = () => {
     return this.http.get('https://nestjs-basic.herokuapp.com/users/companies');
   }
+
+  addService = (service:any) => {
+    return this.http.post(
+      'https://nestjs-basic.herokuapp.com/services',
+      service
+    );
+  }
 }

@@ -12,6 +12,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { NewClientComponent } from './pages/new-client/new-client.component';
 import { CompaniesComponent } from './pages/companies/companies.component';
 import { NewCompanyComponent } from './pages/new-company/new-company.component';
+import { ServicesComponent } from './pages/services/services.component';
 
 type Route = {
   path: string;
@@ -34,6 +35,7 @@ const routes: Route[] = [
       { path: 'users/new', component: NewClientComponent },
       { path: 'companies', component: CompaniesComponent },
       { path: 'companies/new', component: NewCompanyComponent },
+      { path: 'services/:userId', component: ServicesComponent },
     ],
     canActivate: [PathGuard],
   },

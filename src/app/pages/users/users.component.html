@@ -27,7 +27,9 @@
       <div>
         <button (click)="deleteUser(element._id)">delete</button>
         <button (click)="navigateTo('/users/new')">edit</button>
-        <button (click)="navigateTo('/users/products')">add products</button>
+        <button (click)="navigateTo('/services/' + element._id)">
+          add services
+        </button>
       </div>
     </td>
   </ng-container>
