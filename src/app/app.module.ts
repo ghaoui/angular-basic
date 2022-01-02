@@ -28,6 +28,10 @@ import { environment } from '../environments/environment';
 import { TopBarComponent } from './shared-components/top-bar/top-bar.component';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { NewClientComponent } from './pages/new-client/new-client.component';
+import { CompaniesComponent } from './pages/companies/companies.component';
+import { NewCompanyComponent } from './pages/new-company/new-company.component';
+import { ServicesComponent } from './pages/services/services.component';
 // import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
@@ -41,6 +45,10 @@ import { ProfileComponent } from './pages/profile/profile.component';
     ProductDialogComponent,
     TopBarComponent,
     ProfileComponent,
+    NewClientComponent,
+    CompaniesComponent,
+    NewCompanyComponent,
+    ServicesComponent,
     //MatToolbarModule,
     // MatIconModule
   ],

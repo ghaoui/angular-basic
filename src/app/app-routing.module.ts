@@ -9,6 +9,9 @@ import { UsersComponent } from './pages/users/users.component';
 
 import { PathGuard } from './guards/path.guard';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { NewClientComponent } from './pages/new-client/new-client.component';
+import { CompaniesComponent } from './pages/companies/companies.component';
+import { NewCompanyComponent } from './pages/new-company/new-company.component';
 
 type Route = {
   path: string;
@@ -27,7 +30,10 @@ const routes: Route[] = [
     children: [
       { path: 'products', component: ProductsComponent },
       { path: 'users', component: UsersComponent },
-      { path: 'profile', component: ProfileComponent  },
+      { path: 'profile', component: ProfileComponent },
+      { path: 'users/new', component: NewClientComponent },
+      { path: 'companies', component: CompaniesComponent },
+      { path: 'companies/new', component: NewCompanyComponent },
     ],
     canActivate: [PathGuard],
   },

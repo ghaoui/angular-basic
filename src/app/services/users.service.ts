@@ -18,11 +18,7 @@ export class UsersService {
   }
 
   register(user: User) {
-    this.http
-      .post('https://nestjs-basic.herokuapp.com/users', user)
-      .subscribe((data) => {
-        console.log(data);
-      });
+    return this.http.post('http://localhost:3000/users', user);
   }
 
   login({ userName, password }: User) {
@@ -34,5 +30,27 @@ export class UsersService {
 
   me() {
     return this.http.get<User>('https://nestjs-basic.herokuapp.com/me');
+  }
+
+  getClients = () => {
+    return this.http.get('https://nestjs-basic.herokuapp.com/users/clients');
+  };
+
+  addNewClient = (client: any) => {
+    return this.http.post(
+      'https://nestjs-basic.herokuapp.com/users/clients',
+      client
+    );
+  };
+
+  addNewCompany = (company:any) => {
+    return this.http.post(
+      'https://nestjs-basic.herokuapp.com/users/company',
+      company
+    );
+  }
+
+  getCompanies = () => {
+    return this.http.get('https://nestjs-basic.herokuapp.com/users/companies');
   }
 }
