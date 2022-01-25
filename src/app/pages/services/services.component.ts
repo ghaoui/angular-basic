@@ -9,6 +9,8 @@ import { UsersService } from 'src/app/services/users.service';
   styleUrls: ['./services.component.scss'],
 })
 export class ServicesComponent implements OnInit {
+  displayedColumns: string[] = ['_id', 'name', 'price', 'actions'];
+  dataSource: any = [];
   servicesForm = this.fb.group({
     name: ['', [Validators.required]],
     price: ['', [Validators.required]],
@@ -23,11 +25,21 @@ export class ServicesComponent implements OnInit {
   ) {
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.userService.getServices(this.route.snapshot.params['userId']).subscribe((data) => {
+      this.dataSource = data;
+    });
+  }
 
   onSubmit() {
     console.log(this.servicesForm.value);
     this.userService.addService(this.servicesForm.value).subscribe(() => {
+      this.router.navigate(['/users']);
+    });
+  }
+
+  delete(serviceId: string){
+    this.userService.deleteService(serviceId).subscribe(() => {
       this.router.navigate(['/users']);
     });
   }

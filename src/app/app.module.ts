@@ -32,6 +32,8 @@ import { NewClientComponent } from './pages/new-client/new-client.component';
 import { CompaniesComponent } from './pages/companies/companies.component';
 import { NewCompanyComponent } from './pages/new-company/new-company.component';
 import { ServicesComponent } from './pages/services/services.component';
+import { InvoiceComponent } from './pages/invoice/invoice.component';
+import { SocialComponent } from './social/social.component';
 // import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
@@ -49,6 +51,8 @@ import { ServicesComponent } from './pages/services/services.component';
     CompaniesComponent,
     NewCompanyComponent,
     ServicesComponent,
+    InvoiceComponent,
+    SocialComponent,
     //MatToolbarModule,
     // MatIconModule
   ],

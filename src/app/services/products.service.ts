@@ -40,4 +40,10 @@ export class ProductsService {
       'https://nestjs-basic.herokuapp.com/products/' + id
     );
   }
+
+  getProductsByUser() {
+    return this.http.get<Product[]>(
+      'https://nestjs-basic.herokuapp.com/products/user/'
+    );
+  }
 }

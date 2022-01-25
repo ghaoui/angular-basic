@@ -60,4 +60,14 @@ export class UsersService {
       service
     );
   }
+
+  getServices = (userId:any) => {
+    return this.http.get(`https://nestjs-basic.herokuapp.com/services/${userId}`);
+  }
+
+  deleteService = (serviceId:any) => {
+    return this.http.delete(`https://nestjs-basic.herokuapp.com/services/${serviceId}`);
+
+  }
 }
+
